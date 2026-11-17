@@ -25,7 +25,7 @@
 // PT / EN toggle.
 const EN = {
   skip: "Skip to content",
-  "nav.exp": "Experience", "nav.proj": "Projects", "nav.contact": "Contact",
+  "nav.exp": "Experience", "nav.contact": "Contact",
   lede: "Full stack developer in Brasília, Brazil. I build portals, APIs and apps — Java and Spring Boot on the back end, React and React Native on the front, with LLMs wired in where they help.",
   email: "Email",
   "h.about": "About",
@@ -55,8 +55,6 @@ const EN = {
   "exp.3.a": "Maintained and customized the distance-learning platform (Moodle, PHP, CSS).",
   "h.skills": "Skills",
   "sk.front": "Front end & mobile", "sk.ai": "AI & LLMs", "sk.db": "Databases", "sk.ops": "Infrastructure", "sk.prac": "Practices",
-  "h.proj": "Projects on GitHub",
-  "repo.all": "See all repositories",
   "h.edu": "Education",
   "edu.1.when": "2026 — 2027, in progress",
   "edu.1": "Postgraduate in Software Architecture, Data Science & Cybersecurity — PUC-Campinas",
@@ -97,33 +95,6 @@ document.getElementById("lang-toggle").addEventListener("click", () => {
 let saved = null;
 try { saved = localStorage.getItem("lang"); } catch (_) {}
 if (saved === "en" || (!saved && !navigator.language.toLowerCase().startsWith("pt"))) setLang("en");
-
-// Live repo list from GitHub; static list in the HTML is the fallback.
-(async function repos() {
-  const list = document.getElementById("repos");
-  try {
-    const res = await fetch("https://api.github.com/users/vinicius-carv/repos?per_page=100&sort=pushed");
-    if (!res.ok) return;
-    const data = (await res.json())
-      .filter((r) => !r.fork && r.name !== "vinicius-carv" && r.description)
-      .slice(0, 6);
-    if (data.length < 3) return;
-    list.innerHTML = "";
-    for (const r of data) {
-      const li = document.createElement("li");
-      const a = document.createElement("a");
-      a.href = r.html_url;
-      for (const [cls, text] of [["r-name", r.name], ["r-desc", r.description], ["r-lang", r.language || ""]]) {
-        const s = document.createElement("span");
-        s.className = cls;
-        s.textContent = text;
-        a.appendChild(s);
-      }
-      li.appendChild(a);
-      list.appendChild(li);
-    }
-  } catch (_) { /* keep static list */ }
-})();
 
 // Display & accessibility preferences, persisted in localStorage("prefs").
 (function prefs() {
