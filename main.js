@@ -29,7 +29,7 @@ const EN = {
   lede: "Full stack developer in Brasília, Brazil. I build portals, APIs and apps — Java and Spring Boot on the back end, React and React Native on the front, with LLMs wired in where they help.",
   email: "Email",
   "h.about": "About",
-  "about.1": "I've been a full stack developer at Simplify Tecnologia in Brasília since 2023. I build portals and systems for the public sector, international organizations, professional associations and private companies — usually end to end: data modeling, Java and Spring Boot back ends, React or Angular front ends, deployment and production follow-up.",
+  "about.1": "I'm a full stack developer. I build portals and systems for the public sector, international organizations, professional associations and private companies — usually end to end: data modeling, Java and Spring Boot back ends, React or Angular front ends, deployment and production follow-up.",
   "about.2": "I was the technical lead of a partnership-management platform for an international organization. I defined the architecture (Angular, Spring Boot and MySQL), the permission model, the certification workflows, the public transparency portal and the server monitoring, and I was the main contributor to both the front end and the back end.",
   "about.3": "My focus now is AI applied to real problems: a platform that extracts data from healthcare contracts and ties every price, deadline and rule back to the passage it came from, and agent tooling (Claude Code and Codex) that standardizes review, testing and deployment for the team.",
   "theme.toggle": "Dark mode",
