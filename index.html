@@ -24,6 +24,11 @@
       ["contrast", "motion", "links", "spacing"].forEach(function (k) { if (p[k]) d.dataset[k] = "on"; });
     } catch (e) {}
   </script>
+  <!-- Vercel Web Analytics (static-site snippet; script is served by Vercel at deploy time) -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <a class="skip" href="#conteudo" data-i18n="skip">Pular para o conteúdo</a>
