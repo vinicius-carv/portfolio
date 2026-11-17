@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vinícius Carvalho — Desenvolvedor Full Stack</title>
+  <meta name="description" content="Vinícius Carvalho, desenvolvedor full stack em Brasília: Java, Spring Boot, Liferay, React, React Native e integração com LLMs.">
+  <meta property="og:title" content="Vinícius Carvalho — Desenvolvedor Full Stack">
+  <meta property="og:description" content="Java, Spring Boot, Liferay, React, React Native e integração com LLMs.">
+  <meta property="og:url" content="https://vinicius-carv.com.br">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&display=swap" rel="stylesheet">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Apply saved display preferences before first paint (no flash).
+    try {
+      var p = JSON.parse(localStorage.getItem("prefs") || "{}"), d = document.documentElement;
+      if (p.theme === "light" || p.theme === "dark") d.dataset.theme = p.theme;
+      if (p.size) d.dataset.size = p.size;
+      ["contrast", "motion", "links", "spacing"].forEach(function (k) { if (p[k]) d.dataset[k] = "on"; });
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#conteudo" data-i18n="skip">Pular para o conteúdo</a>
+
+  <header class="top">
+    <a class="mark" href="#" aria-label="Início">vc</a>
+    <nav aria-label="Seções">
+      <a href="#experiencia" data-i18n="nav.exp">Experiência</a>
+      <a href="#projetos" data-i18n="nav.proj">Projetos</a>
+      <a href="#contato" data-i18n="nav.contact">Contato</a>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" type="button" id="theme-toggle" aria-pressed="false" data-i18n-aria="theme.toggle" aria-label="Modo escuro">
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+      </button>
+      <div class="a11y">
+        <button class="icon-btn" type="button" id="a11y-toggle" aria-expanded="false" aria-controls="a11y-panel" data-i18n-aria="a11y.open" aria-label="Opções de acessibilidade">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5M12 15l-3.5 6.5M12 15l3.5 6.5"/></svg>
+        </button>
+        <div class="a11y-panel" id="a11y-panel" role="region" aria-labelledby="a11y-title" hidden>
+          <h2 class="a11y-title" id="a11y-title" data-i18n="a11y.title">Acessibilidade</h2>
+
+          <fieldset class="seg">
+            <legend data-i18n="a11y.theme">Tema</legend>
+            <label><input type="radio" name="theme" value="auto" checked> <span data-i18n="a11y.auto">Sistema</span></label>
+            <label><input type="radio" name="theme" value="light"> <span data-i18n="a11y.light">Claro</span></label>
+            <label><input type="radio" name="theme" value="dark"> <span data-i18n="a11y.dark">Escuro</span></label>
+          </fieldset>
+
+          <div class="size-row" role="group" aria-labelledby="size-label">
+            <span id="size-label" data-i18n="a11y.size">Tamanho do texto</span>
+            <div class="stepper">
+              <button type="button" id="size-down" data-i18n-aria="a11y.smaller" aria-label="Diminuir texto">A−</button>
+              <output id="size-value" aria-live="polite">100%</output>
+              <button type="button" id="size-up" data-i18n-aria="a11y.bigger" aria-label="Aumentar texto">A+</button>
+            </div>
+          </div>
+
+          <label class="switch"><input type="checkbox" data-pref="contrast"> <span data-i18n="a11y.contrast">Alto contraste</span></label>
+          <label class="switch"><input type="checkbox" data-pref="motion"> <span data-i18n="a11y.motion">Reduzir animações</span></label>
+          <label class="switch"><input type="checkbox" data-pref="links"> <span data-i18n="a11y.links">Sublinhar links</span></label>
+          <label class="switch"><input type="checkbox" data-pref="spacing"> <span data-i18n="a11y.spacing">Espaçamento de texto ampliado</span></label>
+
+          <button type="button" class="reset" id="a11y-reset" data-i18n="a11y.reset">Restaurar padrão</button>
+        </div>
+      </div>
+      <button class="lang" type="button" id="lang-toggle" aria-label="Switch to English">EN</button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Vinícius<br>Carvalho</h1>
+        <p class="lede" data-i18n="lede">Desenvolvedor full stack em Brasília. Construo portais, APIs e apps — de Java e Spring Boot no back-end a React e React Native na frente, com LLMs integrados onde fazem sentido.</p>
+        <ul class="links">
+          <li><a href="https://github.com/vinicius-carv">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/vinicius-carv/">LinkedIn</a></li>
+          <li><a href="mailto:valves8956@gmail.com" data-i18n="email">E-mail</a></li>
+        </ul>
+      </div>
+      <div class="tiles" id="tiles" aria-hidden="true"></div>
+    </section>
+
+    <section class="block" id="sobre">
+      <h2 data-i18n="h.about">Sobre</h2>
+      <div class="about">
+      <div class="prose">
+        <p data-i18n="about.1">Sou desenvolvedor full stack na Simplify Tecnologia, em Brasília, desde 2023. Construo portais e sistemas para o setor público, organizações internacionais, entidades de classe e empresas privadas — quase sempre de ponta a ponta: modelagem de dados, back-end em Java e Spring Boot, front-end em React ou Angular, deploy e acompanhamento em produção.</p>
+        <p data-i18n="about.2">Fui líder técnico de uma plataforma de gestão de parcerias para uma organização internacional. Defini a arquitetura (Angular, Spring Boot e MySQL), o modelo de permissões, os fluxos de certificação, o portal público de transparência e o monitoramento do servidor, e fui o principal contribuidor do front-end e do back-end.</p>
+        <p data-i18n="about.3">Hoje meu foco é IA aplicada a problemas reais: uma plataforma que extrai dados de contratos na área da saúde e liga cada preço, prazo e regra ao trecho do documento de onde veio, e ferramentas de agentes (Claude Code e Codex) que padronizam revisão, testes e deploy para o time.</p>
+      </div>
+      <figure class="portrait">
+        <picture>
+          <source srcset="img/vinicius.webp" type="image/webp">
+          <img src="img/vinicius.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Foto de Vinícius Carvalho sorrindo, de óculos e camisa preta" data-i18n-alt="photo.alt">
+        </picture>
+      </figure>
+      </div>
+    </section>
+
+    <section class="block" id="experiencia">
+      <h2 data-i18n="h.exp">Experiência</h2>
+      <ol class="timeline">
+        <li>
+          <p class="when" data-i18n="exp.1.when">set 2023 — hoje</p>
+          <h3 data-i18n="exp.1.role">Desenvolvedor Full Stack</h3>
+          <p class="org">Simplify Tecnologia</p>
+          <ul>
+            <li data-i18n="exp.1.a">Líder técnico de uma plataforma web de gestão de parcerias para uma organização internacional: arquitetura Angular + Spring Boot + MySQL, permissões por perfil, fluxos de certificação, portal público de transparência com tratamento de dados sensíveis, exportação de documentos e monitoramento com Spring Boot Admin.</li>
+            <li data-i18n="exp.1.b">Migração de serviços de indexação de documentos jurídicos de módulos Liferay para serviços Spring Boot independentes sobre Oracle, com validação de fidelidade contra o sistema legado em documentos reais.</li>
+            <li data-i18n="exp.1.c">Portal Liferay com cadastro de associados em etapas (React + Liferay Objects), migração da base legada e app React Native (Expo) publicado na Google Play e na App Store, com login SSO e pipeline de release.</li>
+            <li data-i18n="exp.1.d">Plataforma de inteligência de contratos na área da saúde: extração com OCR e LLM com evidência por dado, PostgreSQL com múltiplas operadoras, histórico de preços, tabelas de referência e alertas de reajuste (Next.js, Neon, Vercel).</li>
+            <li data-i18n="exp.1.e">Portais e intranets Liferay para órgãos públicos e empresas privadas, incluindo sites multilíngues com layout RTL; chatbot com Spring Boot, LangChain4j e Ollama.</li>
+          </ul>
+        </li>
+        <li>
+          <p class="when" data-i18n="exp.2.when">jun 2023 — dez 2023</p>
+          <h3 data-i18n="exp.2.role">Desenvolvedor Web, pesquisador voluntário</h3>
+          <p class="org">Universidade de Brasília (UnB)</p>
+          <ul>
+            <li data-i18n="exp.2.a">Sites institucionais de um laboratório de pesquisa, incluindo o repositório de artigos acadêmicos.</li>
+          </ul>
+        </li>
+        <li>
+          <p class="when" data-i18n="exp.3.when">mar 2022 — nov 2022</p>
+          <h3 data-i18n="exp.3.role">Estagiário de TI</h3>
+          <p class="org" data-i18n="exp.3.org">Ministério da Defesa</p>
+          <ul>
+            <li data-i18n="exp.3.a">Manutenção e customização da plataforma de ensino a distância (Moodle, PHP, CSS).</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block" id="competencias">
+      <h2 data-i18n="h.skills">Competências</h2>
+      <dl class="skills">
+        <div><dt>Back-end</dt><dd>Java, Spring Boot, Liferay, Python, Django, Node.js, PHP</dd></div>
+        <div><dt data-i18n="sk.front">Front-end e mobile</dt><dd>React, Angular, Next.js, React Native (Expo), TypeScript</dd></div>
+        <div><dt data-i18n="sk.ai">IA e LLMs</dt><dd data-i18n="sk.ai.items">Extração de documentos com LLM e OCR, LangChain4j, Ollama, Claude / Anthropic API, RAG, Claude Code e Codex</dd></div>
+        <div><dt data-i18n="sk.db">Bancos de dados</dt><dd>Oracle, MySQL, PostgreSQL (Neon), SQLite, NoSQL</dd></div>
+        <div><dt data-i18n="sk.ops">Infraestrutura</dt><dd>Linux, Tomcat, Docker, Vercel, GitHub Actions, Azure DevOps, Maven, Gradle</dd></div>
+        <div><dt data-i18n="sk.prac">Práticas</dt><dd>Jest, TDD, Scrum, Kanban, DDD</dd></div>
+      </dl>
+    </section>
+
+    <section class="block" id="projetos">
+      <h2 data-i18n="h.proj">Projetos no GitHub</h2>
+      <ul class="repos" id="repos">
+        <li><a href="https://github.com/vinicius-carv/AI-Stocks"><span class="r-name">AI-Stocks</span><span class="r-desc" data-i18n="repo.aistocks">Plataforma de investimentos com React, Spring, Docker e PostgreSQL, com assistente de IA.</span><span class="r-lang">JavaScript</span></a></li>
+        <li><a href="https://github.com/vinicius-carv/swiftbank"><span class="r-name">swiftbank</span><span class="r-desc"></span><span class="r-lang">Java</span></a></li>
+        <li><a href="https://github.com/vinicius-carv/student-control"><span class="r-name">student-control</span><span class="r-desc"></span><span class="r-lang">Java</span></a></li>
+        <li><a href="https://github.com/vinicius-carv/estudos-django"><span class="r-name">estudos-django</span><span class="r-desc"></span><span class="r-lang">Python</span></a></li>
+      </ul>
+      <p class="more"><a href="https://github.com/vinicius-carv?tab=repositories" data-i18n="repo.all">Ver todos os repositórios</a></p>
+    </section>
+
+    <section class="block" id="formacao">
+      <h2 data-i18n="h.edu">Formação</h2>
+      <ul class="edu">
+        <li><p class="when" data-i18n="edu.1.when">2026 — 2027, em andamento</p><p data-i18n="edu.1">Pós-graduação em Arquitetura de Software, Ciência de Dados e Cibersegurança — PUC-Campinas</p></li>
+        <li><p class="when">2020 — 2023</p><p data-i18n="edu.2">Bacharelado em Ciência da Computação — UniCEUB</p></li>
+      </ul>
+      <p class="langs" data-i18n="langs">Português nativo, inglês fluente, espanhol intermediário, japonês básico.</p>
+    </section>
+
+    <section class="block contact" id="contato">
+      <h2 data-i18n="h.contact">Contato</h2>
+      <p class="big"><a href="mailto:valves8956@gmail.com">valves8956@gmail.com</a></p>
+      <p data-i18n="contact.note">Aberto a posições remotas, no Brasil ou no exterior.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p data-i18n="foot">Brasília, DF. Azulejos inspirados nos painéis de Athos Bulcão.</p>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
