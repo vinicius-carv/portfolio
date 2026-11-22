@@ -25,7 +25,7 @@
 // PT / EN toggle.
 const EN = {
   skip: "Skip to content",
-  "nav.exp": "Experience", "nav.contact": "Contact",
+  "nav.exp": "Experience", "nav.proj": "Projects", "nav.contact": "Contact",
   lede: "Full stack developer in Brasília, Brazil. I build portals, APIs and apps — Java and Spring Boot on the back end, React and React Native on the front, with LLMs wired in where they help.",
   email: "Email",
   "h.about": "About",
@@ -55,6 +55,10 @@ const EN = {
   "exp.3.a": "Maintained and customized the distance-learning platform (Moodle, PHP, CSS).",
   "h.skills": "Skills",
   "sk.front": "Front end & mobile", "sk.ai": "AI & LLMs", "sk.db": "Databases", "sk.ops": "Infrastructure", "sk.prac": "Practices",
+  "h.proj": "Projects on GitHub",
+  "proj.doc-extract.desc": "PDF contracts to JSON, every field with a verified quote. Spring Boot + Ollama.",
+  "proj.liferay-claude-skills.desc": "Claude Code plugin for Liferay: verified setup, config checks and source lookup.",
+  "repo.all": "See all repositories",
   "h.edu": "Education",
   "edu.1.when": "2026 — 2027, in progress",
   "edu.1": "Postgraduate in Software Architecture, Data Science & Cybersecurity — PUC-Campinas",
