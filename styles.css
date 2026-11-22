@@ -264,14 +264,14 @@ h3 { margin: 0; font-size: 1.2rem; font-weight: 700; letter-spacing: -.01em; }
 .repos { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .repos li { border-bottom: 1px solid var(--line); }
 .repos a {
-  display: grid; grid-template-columns: 12rem minmax(0, 1fr) auto; gap: 1rem; align-items: baseline;
+  display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: .35rem 1rem; align-items: baseline;
   padding: 1rem .25rem; text-decoration: none; color: var(--ink);
 }
 .repos a:hover { background: var(--concrete); }
 .repos a:hover .r-name { color: var(--azul); }
 .r-name { font-weight: 700; overflow-wrap: anywhere; }
 .r-desc { color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.r-lang { font-size: .875rem; color: var(--azul-deep); }
+.r-lang { grid-column: 2; font-size: .875rem; color: var(--azul-deep); }
 .more { margin: 1.25rem 0 0; }
 .repos, .more { grid-column: 2; }
 
@@ -304,6 +304,8 @@ h3 { margin: 0; font-size: 1.2rem; font-weight: 700; letter-spacing: -.01em; }
   .tiles { justify-self: start; max-width: 20rem; order: -1; }
   .block { grid-template-columns: 1fr; gap: 1.25rem; }  .repos, .more, .langs, .contact p { grid-column: auto; }
   .repos a { grid-template-columns: 1fr; gap: .2rem; }
+  .r-lang { grid-column: auto; }
+  .r-desc { display: block; }
   .top nav { display: none; }
   .tools { margin-left: auto; }
 }
