@@ -58,6 +58,7 @@ const EN = {
   "h.proj": "Projects on GitHub",
   "proj.doc-extract.desc": "PDF contracts to JSON, every field with a verified quote. Spring Boot + Ollama.",
   "proj.liferay-claude-skills.desc": "Claude Code plugin for Liferay: verified setup, config checks and source lookup.",
+  "proj.mcp-brasil.desc": "MCP server for Brazilian public data: CNPJ, CEP, IBGE and Diário Oficial da União search.",
   "repo.all": "See all repositories",
   "h.edu": "Education",
   "edu.1.when": "2026 — 2027, in progress",
