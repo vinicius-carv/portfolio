@@ -272,6 +272,9 @@ h3 { margin: 0; font-size: 1.2rem; font-weight: 700; letter-spacing: -.01em; }
 .r-name { font-weight: 700; overflow-wrap: anywhere; }
 .r-desc { color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .r-lang { grid-column: 2; font-size: .875rem; color: var(--azul-deep); }
+.repos .r-live { margin: -.5rem 0 0; padding: 0 .25rem 1rem 13.25rem; font-size: .875rem; }
+.repos .r-live a { display: inline; padding: 0; color: var(--azul); text-decoration: underline; }
+.repos .r-live a:hover { background: none; }
 .more { margin: 1.25rem 0 0; }
 .repos, .more { grid-column: 2; }
 
@@ -305,6 +308,7 @@ h3 { margin: 0; font-size: 1.2rem; font-weight: 700; letter-spacing: -.01em; }
   .block { grid-template-columns: 1fr; gap: 1.25rem; }  .repos, .more, .langs, .contact p { grid-column: auto; }
   .repos a { grid-template-columns: 1fr; gap: .2rem; }
   .r-lang { grid-column: auto; }
+  .repos .r-live { padding-left: .25rem; }
   .r-desc { display: block; }
   .top nav { display: none; }
   .tools { margin-left: auto; }
